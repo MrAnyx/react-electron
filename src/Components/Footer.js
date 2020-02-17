@@ -4,10 +4,10 @@ import logo from '../assets/b_black.png'
 const { ipcRenderer }  = window.require("electron")
 
 export default class Footer extends React.Component {
-	constructor(){
-		super()
-		// this.handleOnClick = this.handleOnClick.bind(this)
-	}
+	// constructor(){
+	// 	super()
+	// 	this.handleOnClick = this.handleOnClick.bind(this)
+	// }
 
 	// handleOnClick(e){
 	// 	e.preventDefault()
