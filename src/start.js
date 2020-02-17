@@ -1,9 +1,7 @@
-const electron = require('electron')
-const app = electron.app
+const {app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const isDev = require('electron-is-dev')
 require('electron-reload')
-const BrowserWindow = electron.BrowserWindow
 
 let mainWindow
 
@@ -13,7 +11,7 @@ function createWindow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
-    },
+    }
   })
 
   mainWindow.loadURL(
@@ -25,7 +23,18 @@ function createWindow() {
   mainWindow.on('closed', () => {
     mainWindow = null
   })
+
+  if(!isDev){
+    mainWindow.setMenu(null)
+  }
 }
+
+
+ipcMain.on("test", (evt, args) => {
+  evt.reply("test-reply", "bonjour connard")
+})
+
+
 
 app.on('ready', createWindow)
 
