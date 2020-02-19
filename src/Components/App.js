@@ -3,6 +3,8 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Header from './Header'
 import Footer from './Footer'
 import ContenuMain from './ContenuMain'
+import ImageHeader from "./ImageHeader"
+import image from "../assets/background2.jpg"
 
 export default class App extends React.Component {
 	render() {
@@ -17,6 +19,7 @@ export default class App extends React.Component {
 						<Footer/>
 					</Route>
 					<Route exact path="/test">
+						<ImageHeader image={image}/>
 						<Footer/>
 					</Route>
 					<Route exact path="/test1">

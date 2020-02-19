@@ -4,19 +4,19 @@ import logo from '../assets/b_black.png'
 const { ipcRenderer }  = window.require("electron")
 
 export default class Footer extends React.Component {
-	// constructor(){
-	// 	super()
-	// 	this.handleOnClick = this.handleOnClick.bind(this)
-	// }
+	constructor(){
+		super()
+		this.handleOnClick = this.handleOnClick.bind(this)
+	}
 
-	// handleOnClick(e){
-	// 	e.preventDefault()
-	// 	console.log("bonjour")
-	// 	ipcRenderer.send("test", "bonjour")
-	// 	ipcRenderer.once("test-reply", (evt, args) => {
-	// 		console.log(args)
-	// 	})
-	// }
+	handleOnClick(e){
+		e.preventDefault()
+		console.log("bonjour")
+		ipcRenderer.send("test", "bonjour")
+		ipcRenderer.once("test-reply", (evt, args) => {
+			console.log(args)
+		})
+	}
 
 	render() {
 		return (
@@ -45,7 +45,7 @@ export default class Footer extends React.Component {
 					</div>
 				</div>
 
-				{/* <button onClick={this.handleOnClick.bind(this)}>click</button> */}
+				<button onClick={this.handleOnClick.bind(this)}>click</button>
 		
 			</footer>
 		)
